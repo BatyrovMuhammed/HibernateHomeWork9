@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Table
 public class User {
+
     @Id
     private Long id;
 
@@ -19,7 +20,8 @@ public class User {
     public User() {
     }
 
-    public User(String name, String lastName, Byte age) {
+    public User(long id,String name, String lastName, Byte age) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -57,4 +59,20 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "User " + '\n' +
+                " id: \t |" + id + '\n' +
+                "  name: \t  |" + name + '\n' +
+                "  lastName: \t  |" + lastName + '\n' +
+                "  age: \t  |" + age + '\n' ;
+    }
+    public static void prnt(){
+        System.out.println(" 1: ~~~ Tablisa tuzuu: ~~~ ");
+        System.out.println(" 2: ~~~ Tablisany ochuruu: ~~~ ");
+        System.out.println(" 3: ~~~ Tablisaga maalymat saktoo: ~~~ ");
+        System.out.println(" 4: ~~~ Id menen ochuruu: ~~~");
+        System.out.println(" 5: ~~~ Baaryn aluu: ~~~");
+        System.out.println(" 6: ~~~ Tazaloo: ~~~");
+    }
 }
