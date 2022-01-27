@@ -93,7 +93,6 @@ try (Connection conn = Util.connection();
              ResultSet rs = stmt.executeQuery(SQL)) {
             while (rs.next()) {
                 list1.add( new User (
-                        rs.getLong("id"),
                         rs.getString("name"),
                         rs.getString("last_name"),
                         rs.getByte("age")));
@@ -126,24 +125,3 @@ try (Connection conn = Util.connection();
 
     }
 }
-//    public static void printId1(int id) throws SQLException{
-//        try (PreparedStatement preparedStatement = connection().
-//                prepareStatement("select * from cities where id=(?)")){
-//            preparedStatement.setInt(1,id);
-//            ResultSet rs=preparedStatement.executeQuery();
-//            if (rs.next()){
-//                int idID =rs.getInt("id");
-//                String name = rs.getString("name");
-//                int  formedYear = rs.getInt("formed_year");
-//                String isLocated =  rs.getString("is_located");
-//                Long livePeople = rs.getLong("live_people");
-//                System.out.println(idID);
-//                System.out.println(name);
-//                System.out.println(formedYear);
-//                System.out.println(isLocated);
-//                System.out.println(livePeople);
-//            }
-//        }finally {
-//            connection().close();
-//        }
-//    }
